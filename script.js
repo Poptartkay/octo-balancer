@@ -37,7 +37,7 @@ setInterval(() => {
 }, 200);
 
 
-$(function () {
+$(function() {
   let hour9 = $('#9');
   let hour10 = $('#10');
   let hour11 = $('#11');
