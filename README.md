@@ -39,7 +39,7 @@ THEN the saved events persist
 ### Links
 ​
 
-- Live Site URL:
+- Live Site URL:https://poptartkay.github.io/octo-balancer/
 ​
 ### Built with
 ​
@@ -50,12 +50,16 @@ THEN the saved events persist
 ​
 ### What I learned
 
+Doing this challenge gave me a broader idea on how to integrate time and date with JS.
+Doing so allows the user to have the approximate time and date for their schedule of the
+day.
 
 ​
 
 ​
 ### Continued development
-
+This is still in on going development as I need to add in local storage and currate a past
+present and future for the hours.
 
 ​
 ## Author
