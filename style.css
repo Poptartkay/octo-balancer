@@ -5,6 +5,16 @@ body {
   line-height: 1;
 }
 
+.datetime {
+  font-size: 16px;
+
+}
+.time {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+
 textarea {
   background: transparent;
   border: none;
@@ -67,6 +77,7 @@ textarea {
 }
 
 .saveBtn i:hover {
+  color: #237588;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
