@@ -54,7 +54,7 @@
   $(document).ready('function');
 
   {
-
+//creates time and date functions
     function displayDate() {
       var currentTime = dayjs().format("MMMM DD, YYYY [at] h:mm:ss a");
       $("#currentDay").text(currentTime);
@@ -90,17 +90,39 @@
       div.text(dailyPlanner[i].hour);
 
       let textbox = $("<textarea>");
-      textbox.attr("data-hour", dailySchedule[i].line);
+      textbox.attr("data-hour", dailyPlanner[i].line);
       textbox.addClass("col-8 col-md-10 description");
       textbox.val(dailyPlanner[i].text);
-      let currVal = localStorage.getItem(dailyPlanner[i].tag)
       if (currVal !== null) {
-        textbox.val(localStorage.getItem(dailyPlanner[i].line))
+        localStorage.setItem(textbox, line);
+        let textbox = localStorage.setItem(textbox)
+      }
+      if (dayjs().hour() > dailyPlanner[i].line){
+        textbox.addClass("past");
+      } else if (dayjs().hour() === dailyPlanner[i].line) {
+        textbox.addClass("present");
+      } else {
+        textbox.addClass("future");
       }
 
+      let button = $("<button>");
+      button.addClass("btn col-2 col-md-1 saveBtn");
+      button.attr("aria-label", "save");
+      button.attr("data-hour", dailyPlanner[i].line);
+      button.click(save);
+
+      row.append(div);
+      row.append(textbox);
+      row.append(button);
+  
+
+      $("#dailyplanner").append(row);
 
     }
   }
+
+
+  // createSchedule();
 
   
 
