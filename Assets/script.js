@@ -2,6 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
+
   var dailyPlanner = [
     {
       hour: "8am",
@@ -79,45 +80,27 @@
 
   }
 
-  
+  //local storage functions
   function createPlanner() {
     for (let i = 0; i < dailyPlanner.length; i++) {
-      let row = $("<div>");
+      let row = $("line");
       row.addClass("row");
 
-      let div = $("<div>");
-      div.addClass("col-2 col-md-1 hour text-center py-3");
+      let div = $("description");
+      div.addClass("textarea");
       div.text(dailyPlanner[i].hour);
+      
+      const text = localStorage.getItem(dailyPlanner[i].text);
+      localStorage.setItem(dailyPlanner[i].text, dailyPlanner[i].line)
 
-      let textbox = $("<textarea>");
-      textbox.attr("data-hour", dailyPlanner[i].line);
-      textbox.addClass("col-8 col-md-10 description");
-      textbox.val(dailyPlanner[i].text);
-      if (currVal !== null) {
-        localStorage.setItem(textbox, line);
-        let textbox = localStorage.setItem(textbox)
-      }
-      if (dayjs().hour() > dailyPlanner[i].line){
-        textbox.addClass("past");
-      } else if (dayjs().hour() === dailyPlanner[i].line) {
-        textbox.addClass("present");
-      } else {
-        textbox.addClass("future");
-      }
+    
 
-      let button = $("<button>");
-      button.addClass("btn col-2 col-md-1 saveBtn");
-      button.attr("aria-label", "save");
-      button.attr("data-hour", dailyPlanner[i].line);
-      button.click(save);
 
-      row.append(div);
-      row.append(textbox);
-      row.append(button);
-  
 
-      $("#dailyplanner").append(row);
+      saveButton.addEventListener("click", function(event) {
 
+      })
+ 
     }
   }
 
