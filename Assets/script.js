@@ -52,7 +52,24 @@
 
   ];
 
-  $(document).ready('function');
+  $(document).ready(function(){
+    function dailyPlanner() {
+      for (let i = 0; i < dailyPlanner.length; i++) {
+        let row = $("line");
+        row.addClass("text");
+  
+        let div = $("hour");
+        div.addClass("textarea");
+        div.text(dailyPlanner[i].text);
+        
+  
+        button.addEventListener("click", function() {
+          localStorage.setItem(dailyPlanner[i].text, dailyPlanner[i].line)
+        })
+   
+      }
+    }
+  });
 
   {
 //creates time and date functions
@@ -81,28 +98,7 @@
   }
 
   //local storage functions
-  function createPlanner() {
-    for (let i = 0; i < dailyPlanner.length; i++) {
-      let row = $("line");
-      row.addClass("row");
-
-      let div = $("description");
-      div.addClass("textarea");
-      div.text(dailyPlanner[i].hour);
-      
-      const text = localStorage.getItem(dailyPlanner[i].text);
-      localStorage.setItem(dailyPlanner[i].text, dailyPlanner[i].line)
-
-    
-
-
-
-      saveButton.addEventListener("click", function(event) {
-
-      })
  
-    }
-  }
 
 
   // createSchedule();
